@@ -1,1 +1,1 @@
-# bug-mapping-using-github-API
+# Bug-Mapping-using-Github-API
