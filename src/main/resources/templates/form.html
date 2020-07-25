@@ -86,11 +86,11 @@
         </div>
         <hr class="modern-form__hr"/>
         <div class="modern-form__form-container">
-            <form>
+            <form th:action="@{/save}" th:object="${bug}">
                 <div class="form-row">
                     <div class="col col-contact">
                         <div class="form-group modern-form__form-group--padding-r"><input
-                                class="form-control input input-tr" placeholder="ID" type="text"/>
+                                class="form-control input input-tr" placeholder="ID" th:field="${bug.id}" type="text"/>
                             <div class="line-box">
                                 <div class="line"></div>
                             </div>
@@ -98,7 +98,8 @@
                     </div>
                     <div class="col col-contact">
                         <div class="form-group modern-form__form-group--padding-l"><input
-                                class="form-control input input-tr" placeholder="Name" type="text"/>
+                                class="form-control input input-tr" placeholder="Name" th:field="${bug.name}"
+                                type="text"/>
                             <div class="line-box">
                                 <div class="line"></div>
                             </div>
@@ -108,36 +109,42 @@
                 <div class="form-row">
                     <div class="col">
                         <div class="form-group modern-form__form-group--padding-r"><input
-                                class="form-control input input-tr" placeholder="Severity" type="text"/>
+                                class="form-control input input-tr" placeholder="Severity" th:field="${bug.severity}"
+                                type="text"/>
                             <div class="line-box">
                                 <div class="line"></div>
                             </div>
                         </div>
                         <div class="form-group modern-form__form-group--padding-r"><input
-                                class="form-control input input-tr" placeholder="Status" type="text"/>
+                                class="form-control input input-tr" placeholder="Status" th:field="${bug.status}"
+                                type="text"/>
                             <div class="line-box">
                                 <div class="line"></div>
                             </div>
                         </div>
                         <div class="form-group modern-form__form-group--padding-r"><input
-                                class="form-control input input-tr" placeholder="Actual Result" type="textarea"/>
+                                class="form-control input input-tr" placeholder="Actual Result"
+                                th:field="${bug.actualResult}" type="text"/>
                             <div class="line-box">
                                 <div class="line"></div>
                             </div>
                         </div>
                         <div class="form-group modern-form__form-group--padding-r"><input
-                                class="form-control input input-tr" placeholder="Expected Result" type="textarea"/>
+                                class="form-control input input-tr" placeholder="Expected Result"
+                                th:field="${bug.expectedResult}" type="text"/>
                             <div class="line-box">
                                 <div class="line"></div>
                             </div>
                         </div>
                         <div class="form-group modern-form__form-group--padding-t"><textarea
                                 class="form-control input modern-form__form-control--textarea"
-                                placeholder="Description"></textarea>
+                                placeholder="Description" th:field="${bug.description}"></textarea>
                             <div class="line-box">
                                 <div class="line"></div>
                             </div>
                         </div>
+                        <input name="date" th:field="${bug.date}" type="hidden">
+                        <input name="mappings" th:field="${bug.mappings}" type="hidden">
                     </div>
                 </div>
                 <div class="form-row">

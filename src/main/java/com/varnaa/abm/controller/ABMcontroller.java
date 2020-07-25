@@ -21,7 +21,6 @@ public class ABMcontroller {
         this.format = new SimpleDateFormat("dd-MM-yyyy");
     }
 
-
     @GetMapping("/new")
     public String createNewBug(Model model) {
         model.addAttribute("bug", new Bug());
@@ -32,7 +31,13 @@ public class ABMcontroller {
     public String saveBug(@ModelAttribute("bug") Bug bug) {
         bug.setDate(format.format(new Date()));
         bugRepository.save(bug);
-        return "redirect: view";
+        return "redirect:/view";
+    }
+
+    @GetMapping("/view")
+    public String viewAllBug(Model model) {
+        model.addAttribute("bugs", bugRepository.findAll());
+        return "table";
     }
 
     @GetMapping("/mappings")
@@ -41,9 +46,4 @@ public class ABMcontroller {
         return "report";
     }
 
-    @GetMapping("/view")
-    public String viewAllBug(Model model) {
-        model.addAttribute("bugs", bugRepository.findAll());
-        return "table";
-    }
 }
