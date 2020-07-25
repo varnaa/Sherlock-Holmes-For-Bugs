@@ -1,0 +1,33 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="headerfiles">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport"/>
+    <title>navbar</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <script rel="script" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<div th:fragment="header">
+    </nav>
+    <nav class="navbar navbar-dark navbar-expand-md bg-dark navigation-clean">
+        <div class="container"><a class="navbar-brand" th:href="@{/}">Automated Bug Mapper</a>
+            <button class="navbar-toggler" data-target="#navcol-1" data-toggle="collapse"><span class="sr-only">Toggle navigation</span><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                 id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" th:href="@{/new}">New Bug</a>
+                    </li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" th:href="@{/view}">Bug
+                        Reports</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active"
+                                                                th:href="@{/mappings}">Mappings</a></li>
+                </ul>
+                s
+            </div>
+        </div>
+    </nav>
+</div>
+</body>
+
+</html>
