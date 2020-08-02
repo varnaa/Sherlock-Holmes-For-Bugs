@@ -1,0 +1,56 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Reports</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <script rel="script" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+    .card {
+        margin: 100px;
+    }
+</style>
+<body>
+<header th:insert="/navbar.html :: header"></header>
+<div class="card" th:each="report : ${reports}">
+    <div class="text-center card-header">
+        <h5 class="mb-0"><b>ID: </b><i th:text="${report.id}"></i></h5>
+    </div>
+    <div class="card-body">
+        <ul class="card-columns">
+            <li><b>Status: </b><i th:text="${report.status}"></i></li>
+            <li><b>Severity: </b><i th:text="${report.severity}"></i></li>
+            <li><b>Date: </b><i th:text="${report.date}"></i></li>
+        </ul>
+        <hr>
+        <ul>
+            <li class="card-header"><b>Name</b>
+                <br/>
+                <p class="card-text" th:text="${report.name}"></p>
+            </li>
+            <li class="card-header"><b>Actual Result</b>
+                <br/>
+                <p class="card-text" th:text="${report.actualResult}"></p>
+            </li>
+            <li class="card-header"><b>Expected Result</b>
+                <br/>
+                <p class="card-text" th:text="${report.expectedResult}"></p>
+            </li>
+            <li class="card-header"><b>Description</b>
+                <br/>
+                <p class="card-text" th:text="${report.description}"></p>
+            </li>
+            <li class="card-header"><b>Possible Mappings</b>
+                <br/>
+                <ul>
+                    <li>test</li>
+                    <li>test</li>
+                    <li>test</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
