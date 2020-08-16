@@ -2,8 +2,8 @@
 
 ### Intro
 
-A tool for ranking all the source files with respect to how likely they are to contain the cause
-of the bug and narrow down their search and improve productivity. The ranking is done on the basis of comparing the source code and the bug report.
+A tool for ranking all the source files with respect to bug reports created and map files that are to likely contain the cause
+of the bug and narrow down their search to improve productivity. The ranking is done on the basis of comparing the source code and the bug report.
 
 * Identifying relevant files is done by finding the similarity between the **bug reports** and the **source code of the project**, **semantic similarity** between the bug report and source code files, **language** used, **file extensions**, **directory path** etc.
 * After extracting relevant words from the bug report, **API calls are made to Github repository** of the specified project to fetch relevant source code files that are likely be the reason for bug based on the description of the bug report. 
