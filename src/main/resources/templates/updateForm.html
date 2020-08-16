@@ -1,0 +1,160 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create New Bug</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <script rel="script" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .submit-now {
+            margin-top: 20px;
+            font-size: 16px;
+            width: 200px;
+            height: 50px;
+            background-color: #e74c3c;
+            border-color: transparent;
+        }
+
+        .form-control.input {
+            border: 0;
+            background: transparent;
+            border-bottom: 1px solid silver;
+            border-radius: 0px !important;
+        }
+
+        .getintouch {
+            height: auto;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        input[type="text"], input[type="email"], input[type="tel"], textarea {
+            border-radius: 0 !important;
+        }
+
+        input[type="text"], input[type="email"], input[type="tel"], textarea {
+            border-radius: 8px !important;
+        }
+
+        .btn-primary:hover {
+            color: #fff;
+            background-color: #4daade;
+            border-color: #4daade;
+            box-shadow: 0px 10px 15px rgba(157, 157, 157, 0.4);
+        }
+
+        .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+            color: #fff;
+            background-color: #4daade;
+            border-color: #4daade;
+        }
+
+        .modern-form {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+
+        .modern-form__hr {
+            border-color: #4daade;
+            border-width: 2px;
+            width: 121px;
+        }
+
+        .modern-form__form-container {
+            padding-top: 100px;
+        }
+
+        .modern-form__form-group--padding-r {
+            padding-right: 20px;
+        }
+
+        .modern-form__form-group--padding-t {
+            padding-top: 50px;
+        }
+
+        .modern-form__form-control--textarea {
+            height: 95px !important;
+            resize: none;
+        }
+    </style>
+</head>
+
+<body>
+<header th:insert="/navbar.html :: header"></header>
+<section class="getintouch">
+    <div class="container modern-form">
+        <div class="text-center">
+            <h4 style="color: #212529;font-size: 45px;">Create / Edit Bug</h4>
+        </div>
+        <hr class="modern-form__hr"/>
+        <div class="modern-form__form-container">
+            <form th:action="@{/save}" th:object="${bug}">
+                <div class="form-row">
+                    <div class="col col-contact">
+                        <div class="form-group modern-form__form-group--padding-r"><input
+                                class="form-control input input-tr" placeholder="ID" th:field="${bug.id}" type="text"/>
+                            <div class="line-box">
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-contact">
+                        <div class="form-group modern-form__form-group--padding-l"><input
+                                class="form-control input input-tr" placeholder="Name" th:field="${bug.name}"
+                                type="text"/>
+                            <div class="line-box">
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group modern-form__form-group--padding-r"><input
+                                class="form-control input input-tr" placeholder="Severity" th:field="${bug.severity}"
+                                type="text"/>
+                            <div class="line-box">
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                        <div class="form-group modern-form__form-group--padding-r"><input
+                                class="form-control input input-tr" placeholder="Status" th:field="${bug.status}"
+                                type="text"/>
+                            <div class="line-box">
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                        <div class="form-group modern-form__form-group--padding-r"><input
+                                class="form-control input input-tr" placeholder="Actual Result"
+                                th:field="${bug.actualResult}" type="text"/>
+                            <div class="line-box">
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                        <div class="form-group modern-form__form-group--padding-r"><input
+                                class="form-control input input-tr" placeholder="Expected Result"
+                                th:field="${bug.expectedResult}" type="text"/>
+                            <div class="line-box">
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                        <div class="form-group modern-form__form-group--padding-t"><textarea
+                                class="form-control input modern-form__form-control--textarea"
+                                placeholder="Description" th:field="${bug.description}"></textarea>
+                            <div class="line-box">
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                        <input name="date" th:field="${bug.date}" type="hidden">
+                        <input name="mappings" th:field="${bug.mappings}" type="hidden">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col text-center">
+                        <button class="btn btn-primary submit-now" type="submit">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <input type="hidden"/><input type="hidden"/></div>
+</section>
+</body>
+</html>
