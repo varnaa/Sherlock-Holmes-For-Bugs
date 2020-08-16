@@ -1,31 +1,24 @@
 package com.varnaa.abm.controller;
 
-import com.uttesh.exude.exception.InvalidDataException;
-import com.varnaa.abm.mapper.MapperService;
 import com.varnaa.abm.model.Bug;
 import com.varnaa.abm.repository.BugRepository;
-import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Optional;
 
 @Controller
 public class ABMcontroller {
 
     private final BugRepository bugRepository;
     private final SimpleDateFormat format;
-    private final MapperService mapperService;
 
-    public ABMcontroller(BugRepository repository, MapperService mapperService) {
+    public ABMcontroller(BugRepository repository) {
         this.bugRepository = repository;
-        this.mapperService = mapperService;
         this.format = new SimpleDateFormat("dd-MM-yyyy");
     }
 
@@ -36,9 +29,9 @@ public class ABMcontroller {
     }
 
     @GetMapping("/save")
-    public String saveBug(@ModelAttribute("bug") Bug bug) throws InterruptedException, InvalidDataException, ParseException, IOException {
+    public String saveBug(@ModelAttribute("bug") Bug bug) {
         bug.setDate(format.format(new Date()));
-        mapperService.findMappings(bug);
+        bugRepository.save(bug);
         return "redirect:/view";
     }
 
@@ -55,18 +48,8 @@ public class ABMcontroller {
     }
 
     @GetMapping("/delete/{id}")
-    public String deleteBug(@PathVariable("id") String id) {
+    public String deleteBug(@PathVariable("id") int id) {
         bugRepository.deleteById(id);
-        return "redirect:/view";
+        return "redirect: /view";
     }
-
-    @GetMapping("/edit/{id}")
-    public String showUpdateForm(@PathVariable("id") String id, Model model) {
-        System.out.println(id);
-        Optional<Bug> bug = bugRepository.findById(id);
-        model.addAttribute("bug", bug);
-        return "updateForm";
-    }
-
-
 }
