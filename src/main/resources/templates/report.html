@@ -41,12 +41,10 @@
                 <br/>
                 <p class="card-text" th:text="${report.description}"></p>
             </li>
-            <li class="card-header"><b>Possible Mappings</b>
+            <li class="card-header"><b>File Mappings</b>
                 <br/>
-                <ul>
-                    <li>test</li>
-                    <li>test</li>
-                    <li>test</li>
+                <ul th:each="planet : ${report.mappings}">
+                    <li th:text="${planet}"></li>
                 </ul>
             </li>
         </ul>

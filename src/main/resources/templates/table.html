@@ -18,14 +18,15 @@
 <div class="bootstrap_datatables">
     <div class="container py-5">
         <header class="text-center text-black">
-            <h1 class="display-4">Bug Reports</h1>
+            <h1 class="display-4">Bug Issues</h1>
         </header>
         <div class="row py-5">
             <div class="col-lg-10 mx-auto">
                 <div class="card rounded shadow border-0">
                     <div class="card-body p-5 bg-white rounded">
                         <div class="col-lg-12 text-right">
-                            <button class="btn btn-sm btn-primary btn-create" type="button">Create New</button>
+                            <a class="btn btn-default" th:href="@{/new}"><em
+                                    class="fa fa-plus"></em></a>
                         </div>
                         <br/>
                         <div class="table-responsive">
@@ -42,15 +43,15 @@
                                 </thead>
                                 <tbody>
                                 <tr th:each="bug : ${bugs}">
-                                    <td class="text-center" th:text="${bug.id}"></td>
-                                    <td class="text-center" th:text="${bug.name}"></td>
+                                    <td class="text-left" th:text="${bug.id}"></td>
+                                    <td class="text-sm-center" th:text="${bug.name}"></td>
                                     <td class="text-center" th:text="${bug.severity}"></td>
-                                    <td class="text-center" th:text="${bug.date}"></td>
-                                    <td class="text-center" th:text="${bug.status}"></td>
+                                    <td class="text-nowrap" th:text="${bug.date}"></td>
+                                    <td class="text-nowrap" th:text="${bug.status}"></td>
                                     <td align="center">
-                                        <a class="btn btn-default" th:href="@{/edit/${bug.id}}"><em
+                                        <a class="btn btn-default" th:href="@{/edit/{id}(id=${bug.id})}"><em
                                                 class="fa fa-pencil"></em></a>
-                                        <a class="btn btn-default" th:href="@{/delete/${bug.id}}"><em
+                                        <a class="btn btn-default" th:href="@{/delete/{id}(id=${bug.id})}"><em
                                                 class="fa fa-trash"></em></a>
                                     </td>
                                 </tr>
