@@ -58,7 +58,5 @@ of the bug and narrow down their search and improve productivity. The ranking is
 
 Go to view bug mappings and check for the relevant source files that was mapped to the report
 
-
-
-![file_mapping](https://github.com/varnaa/bug-mapping-using-github-API/blob/master/file_mappings.png)
+![file_mapping](https://github.com/varnaa/bug-mapping-using-github-API/blob/master/file_mapping.png)
 
