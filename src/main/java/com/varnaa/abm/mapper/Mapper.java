@@ -17,8 +17,9 @@ import java.util.*;
 @Service
 public class Mapper {
     private final Http Http;
-    private final Stemmer stemmer;
     private final JsonParser parser;
+    private final Stemmer stemmer;
+
 
     public Mapper(Http Http, Stemmer stemmer, JsonParser parser) {
         this.Http = Http;
