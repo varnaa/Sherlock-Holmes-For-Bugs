@@ -20,7 +20,11 @@ of the bug and narrow down their search and improve productivity. The ranking is
 
      
 
-     `Specify your **repository information and project settings** in the **application.properties** file`
+     
+
+     Specify your **repository information and project settings** in the **application.properties** file
+
+     
 
      
 
@@ -30,25 +34,31 @@ of the bug and narrow down their search and improve productivity. The ranking is
 
      
 
-     `After filling the project properties, execute the following code in the terminal.`
-
-     > maven clean install -X
-
      
 
-     `Once maven build is finished, go to your browser and launch: `
+     After filling the project properties, execute the following code in the terminal.
 
+     > maven clean install -X
+     
+     
+     
+     Once maven build is finished, go to your browser and launch: 
+     
      > localhost:8080/new
      
      
      
-     `Create new bug report and save it`
+     Create new bug report and save it
+     
+     
      
      ![create_new_bug_issue](https://github.com/varnaa/bug-mapping-using-github-API/blob/master/create_new_bug_issue.png)
 
 
 
-`Go to view bug mappings and check for the relevant source files that was mapped to the report`
+Go to view bug mappings and check for the relevant source files that was mapped to the report
+
+
 
 ![file_mapping](https://github.com/varnaa/bug-mapping-using-github-API/blob/master/file_mappings.png)
 
