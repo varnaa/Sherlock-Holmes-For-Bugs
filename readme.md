@@ -1,8 +1,8 @@
-# Automated Bug Report Mapper to Source Files.
+# Sherlock-Holmes-For-Bug
 
 ### Intro
 
-Sherlock-holmes here is a spring boot web application that helps you to quickly find files, code and commit messages that can be relevant to the issues or bug reports created while working on a project. This project is limited to git repositories only. 
+    Sherlock-holmes here is a spring boot web application that helps you to quickly find files, code and commit messages that can be relevant to the issues or bug reports created while working on a project. This project is limited to git repositories only. 
 ---
 
 ### Getting Started
