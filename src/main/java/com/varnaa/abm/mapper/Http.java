@@ -29,7 +29,7 @@ public class Http {
     public Http() {
     }
 
-    public void initializeProperies() {
+    public void initializeProperties() {
         this.language = projectProperities.language;
         this.extension = projectProperities.extension;
         this.user_name = projectProperities.user_name;

@@ -18,8 +18,8 @@ import java.util.List;
 @Service
 public class MapperService {
     private final Mapper mapper;
-    private List<String> mappings;
     private final BugRepository repository;
+    private List<String> mappings;
 
     public MapperService(Mapper mapper, BugRepository repository) {
         this.mapper = mapper;

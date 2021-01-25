@@ -71,6 +71,13 @@
             <artifactId>json</artifactId>
             <version>20200518</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.uttesh/exude -->
+        <dependency>
+            <groupId>com.uttesh</groupId>
+            <artifactId>exude</artifactId>
+            <version>0.0.3</version>
+        </dependency>
+
     </dependencies>
 
     <build>

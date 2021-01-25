@@ -55,13 +55,13 @@ public class ABMcontroller {
     }
 
     @GetMapping("/delete/{id}")
-    public String deleteBug(@PathVariable("id") String id) {
+    public String deleteBug(@PathVariable("id") int id) {
         bugRepository.deleteById(id);
         return "redirect:/view";
     }
 
     @GetMapping("/edit/{id}")
-    public String showUpdateForm(@PathVariable("id") String id, Model model) {
+    public String showUpdateForm(@PathVariable("id") int id, Model model) {
         System.out.println(id);
         Optional<Bug> bug = bugRepository.findById(id);
         model.addAttribute("bug", bug);
